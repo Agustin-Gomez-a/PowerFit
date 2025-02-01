@@ -6,22 +6,22 @@ const Classes = () => {
     {
       name: 'CROSSFIT',
       description: 'Entrenamiento funcional de alta intensidad que combina ejercicios cardiovasculares y de fuerza.',
-      image: '/src/assets/img/service/1.jpg'
+      image: '/public/img/service/1.jpg'
     },
     {
       name: 'MUSCULACIÓN',
       description: 'Desarrolla tu fuerza y masa muscular con nuestro programa especializado de entrenamiento con pesas.',
-      image: '/src/assets/img/service/2.jpg'
+      image: "/public/img/service/2.jpg"
     },
     {
       name: 'CARDIO',
       description: 'Mejora tu resistencia y quema calorías con nuestras sesiones de cardio de alta intensidad.',
-      image: '/src/assets/img/service/3.jpg'
+      image: '/public/img/service/3.jpg'
     },
     {
       name: 'ENTRENAMIENTO FUNCIONAL',
       description: 'Mejora tu fuerza, resistencia y movilidad con ejercicios funcionales.',
-      image: '/src/assets/img/service/4.jpg'
+      image: '/public/img/service/4.jpg'
     }
   ];
 
