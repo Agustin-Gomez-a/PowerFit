@@ -1,0 +1,157 @@
+.features {
+  padding: 5rem 0;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 215, 0, 0.03) 10px,
+    rgba(255, 215, 0, 0.03) 20px
+  );
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #ffd700;
+  text-shadow: 3px 3px 0px #000, 5px 5px 0px rgba(255, 215, 0, 0.3);
+  font-family: 'Address Sans Pro', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #ff5722;
+  margin: 1rem auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transform: skew(-3deg);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 215, 0, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.feature-card:hover {
+  transform: skew(-3deg) translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+  transform: skew(3deg);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: skew(3deg) scale(1.2);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.feature-card h3 {
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  transform: skew(3deg);
+  letter-spacing: 2px;
+}
+
+.feature-card p {
+  color: #fff;
+  line-height: 1.6;
+  transform: skew(3deg);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 3rem 0;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    transform: skew(0);
+    padding: 2rem 1.5rem;
+  }
+
+  .feature-card:hover {
+    transform: skew(0) translateY(-10px);
+  }
+
+  .feature-icon,
+  .feature-card h3,
+  .feature-card p {
+    transform: skew(0);
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: skew(0) scale(1.2);
+  }
+}

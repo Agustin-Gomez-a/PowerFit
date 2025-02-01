@@ -1,0 +1,162 @@
+.trainers {
+  padding: 5rem 0;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+.trainers::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.1) 0%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.trainer-card {
+  position: relative;
+  background: #111;
+  border: 2px solid #ffd700;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.trainer-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 215, 0, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+  z-index: 1;
+}
+
+.trainer-image {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+.trainer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trainer-card:hover .trainer-image img {
+  transform: scale(1.1);
+}
+
+.trainer-info {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    #000 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.trainer-name {
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.trainer-specialty {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trainer-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.trainer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: #ffd700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .trainers {
+    padding: 3rem 0;
+    clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+  }
+
+  .trainers-grid {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .trainer-image {
+    height: 300px;
+  }
+
+  .trainer-info {
+    padding: 1.5rem;
+  }
+
+  .trainer-name {
+    font-size: 1.5rem;
+  }
+}
