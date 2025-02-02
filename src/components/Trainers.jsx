@@ -7,7 +7,7 @@ const Trainers = () => {
     {
       name: "Alex Martínez",
       position: "Entrenador de Fuerza",
-      image: "/img/team/1.jpg",
+      image: "/src/img/coach1.jpg",
       social: {
         facebook: "#",
         instagram: "#",
@@ -15,9 +15,9 @@ const Trainers = () => {
       }
     },
     {
-      name: "Sara López",
+      name: "Tom Homz",
       position: "Especialista en HIIT",
-      image: "/img/team/2.jpg",
+      image: "/src/img/coach2.jpg",
       social: {
         facebook: "#",
         instagram: "#",
@@ -27,7 +27,7 @@ const Trainers = () => {
     {
       name: "Marco Silva",
       position: "Coach de CrossFit",
-      image: "/img/team/3.jpg",
+      image: "/src/img/coach3.jpg",
       social: {
         facebook: "#",
         instagram: "#",
