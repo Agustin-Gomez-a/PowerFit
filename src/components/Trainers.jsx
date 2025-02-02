@@ -7,7 +7,7 @@ const Trainers = () => {
     {
       name: "Alex Martínez",
       position: "Entrenador de Fuerza",
-      image: "/src/img/coach1.jpg",  // Actualizar ruta
+      image: "/img/coach1.jpg",  // Actualizado para usar la carpeta public
       social: {
         facebook: "#",
         instagram: "#",
@@ -17,7 +17,7 @@ const Trainers = () => {
     {
       name: "Tom Homz",
       position: "Especialista en HIIT",
-      image: "/src/img/coach2.jpg",
+      image: "/img/coach2.jpg",  // Actualizado para usar la carpeta public
       social: {
         facebook: "#",
         instagram: "#",
@@ -27,7 +27,7 @@ const Trainers = () => {
     {
       name: "Marco Silva",
       position: "Coach de CrossFit",
-      image: "/src/img/coach3.jpg",
+      image: "/img/coach3.jpg",  // Actualizado para usar la carpeta public
       social: {
         facebook: "#",
         instagram: "#",
