@@ -165,16 +165,16 @@
 
 .stat-number {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2rem; /* Reducido de 2.5rem */
   font-weight: 900;
   color: #ffd700;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem; /* Reducido de 0.5rem */
 }
 
 .stat-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* Reducido de 0.9rem */
   font-weight: 600;
   color: #fff;
   letter-spacing: 1px;
@@ -204,42 +204,88 @@
 
 @media (max-width: 768px) {
   .hero {
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding: 80px 15px;
+    clip-path: none;
+    background-position: center;
   }
 
   .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
     text-align: center;
-    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 
   .hero-content h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    word-wrap: break-word;
   }
 
   .hero-content p {
     font-size: 1rem;
-    margin: 0 auto 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 2rem 0;
   }
 
-  .hero-content h1::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .cta-button {
+    margin: 0 auto;
+    width: fit-content;
+    min-width: auto;
+    padding: 12px 30px;
   }
 
   .hero-stats {
-    gap: 1rem;
+    width: 100%;
+    padding: 0;
+    margin: 2rem 0 0 0;
     justify-content: center;
   }
 
   .stat-number {
-    font-size: 2rem;
+    font-size: 1.6rem; /* Reducido para móviles */
   }
 
   .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.7rem; /* Reducido para móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
   }
 }
