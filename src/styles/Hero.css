@@ -1,51 +1,87 @@
+/* Agregar al inicio del archivo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .hero {
+  position: relative;
   height: 100vh;
-  width: 100vw;
-  background-image: url('https://htmldemo.net/zymzoo/zymzoo/assets/img/slider/h-1.png');
+  width: 100vw;  /* Cambiado de 100% a 100vw */
+  background-image: url('/img/hero-2.jpg');
   background-size: cover;
   background-position: center;
-  position: relative;
   display: flex;
   align-items: center;
-  padding: 0;
   margin: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  padding: 0;
   overflow: hidden;
+  background-attachment: scroll; /* Cambiado de fixed a scroll */
+  isolation: isolate; /* Aislar el efecto solo a esta sección */
 }
 
 .hero-overlay {
-  position: absolute;
+  position: absolute; /* Cambiado de fixed a absolute */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
-.hero::after {
+/* Efecto de luz brillante ajustado */
+.hero::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(45deg, transparent 45%, rgba(255,215,0,0.1) 45%, rgba(255,215,0,0.1) 55%, transparent 55%),
-    linear-gradient(-45deg, transparent 45%, rgba(255,215,0,0.1) 45%, rgba(255,215,0,0.1) 55%, transparent 55%);
-  background-size: 30px 30px;
+  position: absolute; /* Cambiado de fixed a absolute */
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shine 8s ease-in-out infinite; /* Aumentado a 8s y agregado ease-in-out */
+  transform: rotate(45deg);
   z-index: 2;
-  animation: backgroundMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    transform: translate(-100%, -100%) rotate(45deg);
+  }
+  50% {
+    transform: translate(100%, 100%) rotate(45deg);
+  }
+  100% {
+    transform: translate(-100%, -100%) rotate(45deg);
+  }
 }
 
 .hero-content {
   position: relative;
   z-index: 3;
+  width: 100%;  /* Cambiado de 90% a 100% */
+  max-width: 1200px;
+  margin: 0;
+  padding: 0 40px;  /* Ajustado el padding */
   color: #fff;
-  width: 100%;
-  padding: 0 2rem;
-  text-align: left;
-  max-width: none;
+  text-align: left;  /* Cambiado a left */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Cambiado a flex-start */
+  justify-content: center;
+  margin-left: 10%;  /* Ajustar posición */
 }
 
 .hero-content h1 {
@@ -60,6 +96,8 @@
   animation: glitchText 5s infinite;
   position: relative;
   display: inline-block;
+  line-height: 1.1;  /* Ajustar espaciado entre líneas */
+  text-align: left;
 }
 
 .hero-content h1::after {
@@ -82,6 +120,8 @@
   font-weight: 800;
   letter-spacing: 2px;
   position: relative;
+  text-align: left;
+  margin-top: 1rem;
 }
 
 .hero-content p {
@@ -92,6 +132,9 @@
   color: rgba(255,255,255,0.9);
   text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
   position: relative;
+  text-align: left;
+  line-height: 1.5;
+  margin-top: 1rem;
 }
 
 .cta-button {
@@ -204,49 +247,112 @@
 
 @media (max-width: 768px) {
   .hero {
-    width: 100%;
     min-height: 100vh;
-    height: auto;
-    padding: 80px 15px;
+    height: 100vh; /* Volver a altura completa */
     clip-path: none;
+    background-attachment: scroll; /* Para mejor compatibilidad en móviles */
+    padding: 40px 0;  /* Reducido el padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 20px 0;
+    background-size: cover; /* Volver a cover */
+    background-repeat: no-repeat;
     background-position: center;
+  }
+
+  .hero::before {
+    width: 300%;
+    height: 300%;
+    animation-duration: 8s;
+    position: absolute; /* Volver a absolute en móviles */
   }
 
   .hero-content {
     width: 100%;
-    max-width: 100%;
     padding: 0;
+    margin: 0;
+    max-width: 100%;
+    padding: 0 15px;
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 10px;
+    margin-left: 5%;
+    padding: 0 20px;
+    align-items: flex-start;  /* Alinear elementos a la izquierda */
+    padding-left: 5%;  /* Padding izquierdo para separar del borde */
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;  /* Aumentado de 2rem */
     width: 100%;
     padding: 0;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     word-wrap: break-word;
     hyphens: auto;
+    display: block;  /* Cambiado de inline-block */
+    font-size: 2.2rem;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 0 10px;
+    line-height: 1.2;
+    display: block;
+    font-size: 1.8rem;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.2;
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
   .hero-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;  /* Aumentado de 1.5rem */
     width: 100%;
     padding: 0;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     word-wrap: break-word;
+    font-size: 1.8rem;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 0 10px;
+    line-height: 1.3;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.2;
+    font-size: 1.4rem;
+    margin-top: 0.8rem;
   }
 
   .hero-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;  /* Aumentado de 1rem */
     width: 100%;
     max-width: 100%;
     padding: 0;
     margin: 0 0 2rem 0;
+    padding: 0 15px;
+    margin: 0 auto 2rem auto;
+    max-width: 90%;
+    font-size: 1.1rem;
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    padding: 0 15px;
+    line-height: 1.4;
+    white-space: normal; /* Asegura que el texto se ajuste correctamente */
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin: 0 0 1.5rem 0;
+    padding: 0 5px;
+    max-width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    br {
+      display: none;
+    }
   }
 
   .cta-button {
@@ -254,6 +360,8 @@
     width: fit-content;
     min-width: auto;
     padding: 12px 30px;
+    margin: 1rem 0;  /* Quitar margin auto */
+    align-self: flex-start;  /* Alinear a la izquierda */
   }
 
   .hero-stats {
@@ -261,6 +369,32 @@
     padding: 0;
     margin: 2rem 0 0 0;
     justify-content: center;
+    flex-wrap: wrap;  /* Permite que las estadísticas se envuelvan si es necesario */
+    gap: 1.5rem;  /* Reducido de 2rem */
+    margin-top: 2rem;
+    padding: 0 15px;
+    width: 90%;
+    margin: 1.5rem auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 10px;
+    margin: 1rem 0 0 0;
+    justify-content: center;
+    gap: 1rem;
+    width: auto;  /* Cambiar de 100% a auto */
+    margin: 1rem 0;  /* Quitar margin auto */
+    padding: 0;
+    justify-content: flex-start;  /* Alinear a la izquierda */
+    gap: 2rem;  /* Aumentar espacio entre stats */
+  }
+
+  .stat {
+    min-width: 100px;  /* Ancho mínimo para las estadísticas */
+    padding: 0 10px;
+    min-width: 90px;
   }
 
   .stat-number {
@@ -270,22 +404,114 @@
   .stat-label {
     font-size: 0.7rem; /* Reducido para móviles */
   }
+
+  .hero-overlay {
+    position: absolute; /* Volver a absolute en móviles */
+    background: rgba(0, 0, 0, 0.75); /* Ajustar opacidad */
+  }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 60px 10px;
+    padding: 60px 0;
+    padding: 80px 10px;
+    padding: 30px 0;
+    padding: 15px 0;
+    height: 100vh;
+    background-position: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-size: 1.8rem;
+    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 95%;
+    font-size: 0.95rem;
+    width: 95%;
+    padding: 0 5px;
+    font-size: 1rem;
+    padding: 0 10px;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    padding: 0 10px;
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+    width: 95%;
+    gap: 0.8rem;
+    gap: 1.5rem;  /* Ajustar gap para pantallas pequeñas */
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .hero-content {
+    margin-left: 3%;
+    padding-left: 5%;
+    width: 95%;
+  }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 360px) {
+  .hero {
+    padding: 40px 0;
+    padding: 60px 5px;
+    height: 100vh;
+    background-position: 85% center;
   }
 
   .hero-content h1 {
     font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   .hero-content h2 {
     font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .hero-content p {
     font-size: 0.9rem;
+    font-size: 0.9rem;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .hero-content {
+    padding-left: 2%;  /* Reducir aún más el padding */
+  }
+
+  .hero-stats {
+    gap: 1rem;  /* Reducir gap aún más */
   }
 }

@@ -5,9 +5,11 @@ const Hero = () => {
   return (
     <section className="hero" id="inicio">
       <div className="hero-content">
-        <h1>DOMINA TU CUERPO</h1>
+        <h1>DOMINA TU<br/>CUERPO</h1>
         <h2>SUPERA TUS LÍMITES</h2>
-        <p>No más excusas. Es hora de forjar el físico que mereces con el entrenamiento más intenso y efectivo.</p>
+        <p>No más excusas. Es hora de forjar el físico <br/>
+           que mereces con el entrenamiento más intenso <br/>
+           y efectivo.</p>
         <a href="#membresias" className="cta-button">
           EMPEZA CON NOSOTROS
         </a>
