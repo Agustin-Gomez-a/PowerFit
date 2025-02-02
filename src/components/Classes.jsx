@@ -1,27 +1,27 @@
 import React from 'react';
 import '../styles/Classes.css';
 
-import musculacionImg from '../img/musculacion.png';
-import cardioImg from '../img/cardio.jpg';
-import funcionalImg from '../img/funcional.png';
-
 const Classes = () => {
   const classes = [
     {
       name: 'CROSSFIT',
+      description: 'Entrenamiento funcional de alta intensidad que combina ejercicios cardiovasculares y de fuerza.',
+      image: '/src/img/crosffit.png'
+    },
+    {
       name: 'MUSCULACIÓN',
       description: 'Desarrolla tu fuerza y masa muscular con nuestro programa especializado de entrenamiento con pesas.',
-      image: "/img/musculacion.png"  // Actualizar ruta
+      image: "/src/img/musculacion.png"
     },
     {
       name: 'CARDIO',
       description: 'Mejora tu resistencia y quema calorías con nuestras sesiones de cardio de alta intensidad.',
-      image: '/img/cardio.jpg'
+      image: '/src/img/cardio.jpg'
     },
     {
       name: 'ENTRENAMIENTO FUNCIONAL',
       description: 'Mejora tu fuerza, resistencia y movilidad con ejercicios funcionales.',
-      image: '/img/funcional.png'
+      image: '/src/img/funcional.png'
     }
   ];
 
@@ -51,6 +51,4 @@ const Classes = () => {
 
 export default Classes;
 
-};
 
-export default Classes;

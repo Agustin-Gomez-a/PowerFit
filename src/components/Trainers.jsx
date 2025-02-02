@@ -7,7 +7,7 @@ const Trainers = () => {
     {
       name: "Alex Martínez",
       position: "Entrenador de Fuerza",
-      image: "/img/coach1.jpg",  // Actualizar ruta
+      image: "/src/img/coach1.jpg",  // Actualizar ruta
       social: {
         facebook: "#",
         instagram: "#",
